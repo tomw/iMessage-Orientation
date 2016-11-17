@@ -31,9 +31,8 @@ extension UIView {
         if let window = self.window {
 
             let fixedPoint = self.convert(CGPoint(x: 1, y: 1), to: window.screen.fixedCoordinateSpace)
-            let dimensionPositive = (fixedPoint.x > 0, fixedPoint.y > 0)
 
-            switch dimensionPositive {
+            switch (fixedPoint.x > 0, fixedPoint.y > 0) {
 
             case (true, false):
                 return .landscapeLeft
